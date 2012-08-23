@@ -50,6 +50,8 @@ public class Http11 extends RubyObject {
 
         RubyClass cHttpParser = mPuma.defineClassUnder("HttpParser",runtime.getObject(),ALLOCATOR);
         cHttpParser.defineAnnotatedMethods(Http11.class);
+
+        MiniSSL.createMiniSSLUnder(runtime, mPuma);
     }
 
     private Ruby runtime;
